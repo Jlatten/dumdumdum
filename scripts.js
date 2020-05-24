@@ -18,9 +18,17 @@ document.addEventListener("DOMContentLoaded", function() {
 
         newSquare.addEventListener("dblclick", function() {
             if (newSquare.id % 2 === 0) {
-                newSquare.nextSibling.remove();
+                if (newSquare.nextSibling !== null) {
+                    newSquare.nextSibling.remove();
+                } else {
+                    alert(" No Odd Square Next ");
+                }
             } else {
-                newSquare.previousSibling.remove();
+                if (newSquare.previousSibling !== null) {
+                    newSquare.previousSibling.remove();
+                } else {
+                    alert("No Even Square Before");
+                }
             }
 
         });
